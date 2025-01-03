@@ -1,0 +1,85 @@
+<!-- public/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Room Booking</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <h1>Hotel Room Booking</h1>
+    </header>
+
+    <!-- Filter Section -->
+    <div class="filter-section">
+        <label for="location">Filter by Location:</label>
+        <input type="text" id="location" placeholder="Enter location">
+        <button id="filter-btn">Filter</button>
+        <button id="booked-btn">Booking Data</button>
+    </div>
+
+    <!-- Hotel List Section -->
+    <div class="hotel-list" id="hotel-list">
+        <!-- Hotels will be dynamically added here -->
+    </div>
+
+    <!-- Booking Form Modal -->
+    <div id="booking-modal" class="modal">
+        <div class="modal-content">
+            <span id="close-modal" class="close">&times;</span>
+            <h2>Book Your Room</h2>
+            <form id="booking-form">
+                <input type="hidden" id="hotel-id">
+                <label for="rooms">No of Rooms:</label>
+                <input type="number" id="rooms" required min="1">
+                <label for="check-in">Check-in Date:</label>
+                <input type="date" id="check-in" required>
+                <label for="check-out">Check-out Date:</label>
+                <input type="date" id="check-out" required>
+                <button type="submit">Book Now</button>
+            </form>
+        </div>
+    </div>
+    <div id="modifyBookingModal" class="modal">
+        <div class="modal-content">
+            <span id="close-modal" class="close">&times;</span>
+          <h3>Modify Booking</h3>
+          <form id="modifyBookingForm">
+            <label for="checkInDate">Check-in Date:</label>
+            <input type="date" id="checkInDate" name="checkInDate" required>
+            
+            <label for="checkOutDate">Check-out Date:</label>
+            <input type="date" id="checkOutDate" name="checkOutDate" required>
+            <label for="checkInDate">No Of Rooms:</label>
+            <input type="number" id="numOfRooms" required min="1">
+            <button type="submit">Save Changes</button>
+            <button type="button" onclick="closeModal()">Cancel</button>
+          </form>
+        </div>
+      </div>
+
+
+
+  <!-- Display Booked Rooms -->
+  <h2>Your Bookings</h2>
+  <table id="bookingsTable">
+    <thead>
+      <tr>
+        <th>Hotel</th>
+        <th>Check-in</th>
+        <th>Check-out</th>
+        <th>Rooms</th>
+        <th>Status</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody id="bookingsBody"></tbody>
+  </table>
+
+    <script src="script.js"></script>
+</body>
+</html>

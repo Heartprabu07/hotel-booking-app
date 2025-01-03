@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Bookings</title>
+  <style>
+    /* Add your styles here */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Your Bookings</h2>
+        <table class="booking-table">
+          <thead>
+            <tr>
+              <th>Hotel Name</th>
+              <th>Check-In Date</th>
+              <th>Check-Out Date</th>
+              <th>Rooms Booked</th>
+              <th>Total Amount</th>
+              <th>Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="bookingTableBody">
+            <!-- Booking rows will be dynamically inserted here -->
+          </tbody>
+        </table>
+      </div>
+
+  <script>
+    // Fetch all bookings from the API
+    async function fetchBookings() {
+      try {
+        const response = await fetch('http://localhost:3000/api/bookings');
+        const bookings = await response.json();
+        const bookingsTable = document.getElementById('bookingsTable').getElementsByTagName('tbody')[0];
+
+        bookings.forEach(booking => {
+          const row = document.createElement('tr');
+          row.innerHTML = `
+            <td>${booking.hotelId ? booking.hotelId.name : 'N/A'}</td>
+            <td>${booking.userId}</td>
+            <td>${new Date(booking.checkInDate).toLocaleDateString()}</td>
+            <td>${new Date(booking.checkOutDate).toLocaleDateString()}</td>
+            <td>${booking.numOfRooms}</td>
+            <td>${booking.status}</td>
+          `;
+          bookingsTable.appendChild(row);
+        });
+      } catch (error) {
+        console.error('Error fetching bookings:', error);
+      }
+    }
+
+    // Load the bookings when the page is loaded
+    window.onload = fetchBookings;
+  </script>
+
+</body>
+</html>
