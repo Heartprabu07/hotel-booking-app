@@ -1,0 +1,38 @@
+[{
+  "_id": {
+    "$oid": "67782ccb2a9a2952e590c0a2"
+  },
+  "hotelId": {
+    "$oid": "677824783b91d598df5793db"
+  },
+  "userId": "12345",
+  "checkInDate": {
+    "$date": "2025-01-05T00:00:00.000Z"
+  },
+  "checkOutDate": {
+    "$date": "2025-01-06T00:00:00.000Z"
+  },
+  "numOfRooms": 2,
+  "totalAmount": 100,
+  "status": "Cancelled",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67783c65e6895cb537384770"
+  },
+  "hotelId": {
+    "$oid": "677824783b91d598df5793db"
+  },
+  "userId": "12345",
+  "checkInDate": {
+    "$date": "2025-01-05T00:00:00.000Z"
+  },
+  "checkOutDate": {
+    "$date": "2025-01-06T00:00:00.000Z"
+  },
+  "numOfRooms": 2,
+  "totalAmount": 4400,
+  "status": "Cancelled",
+  "__v": 0
+}]

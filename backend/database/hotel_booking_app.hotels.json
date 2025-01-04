@@ -1,0 +1,45 @@
+[{
+  "_id": {
+    "$oid": "677824783b91d598df5793db"
+  },
+  "name": "Leela Palace",
+  "location": "Bengaluru",
+  "availableRooms": 18,
+  "pricePerNight": 2200
+},
+{
+  "_id": {
+    "$oid": "677824783b91d598df5793dc"
+  },
+  "name": "Oberoi Udaivilas",
+  "location": "Udaipur",
+  "availableRooms": 5,
+  "pricePerNight": 3000
+},
+{
+  "_id": {
+    "$oid": "67783a0ec059a96684ccf879"
+  },
+  "name": "Taj Mahal Palace",
+  "location": "Mumbai",
+  "availableRooms": 10,
+  "pricePerNight": 1500
+},
+{
+  "_id": {
+    "$oid": "67783a65c059a96684ccf87a"
+  },
+  "name": "ITC Grand Chola",
+  "location": "Chennai",
+  "availableRooms": 12,
+  "pricePerNight": 1800
+},
+{
+  "_id": {
+    "$oid": "67783a8dc059a96684ccf87b"
+  },
+  "name": "Park Hyatt",
+  "location": "Hyderabad",
+  "availableRooms": 7,
+  "pricePerNight": 1600
+}]
